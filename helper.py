@@ -2,7 +2,7 @@
 import gzip
 
 # Path to the files
-PATH = '/home/mouadh/Desktop/AXA/insuranceQA/insuranceQA/V2/'
+PATH = '/home/mouadh/Desktop/AXA/insuranceQA/V2/'
 
 # Read the vocabulary 
 def construct_vocab(file):
