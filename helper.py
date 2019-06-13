@@ -9,6 +9,7 @@ def construct_vocab(file):
     '''
     The vocabulary will be a dictionary with the word as value
     and the idx as a key
+    input: path to the file
     '''
     vocabulary = {}
     with open(file) as f:
@@ -17,12 +18,19 @@ def construct_vocab(file):
             # Remove the return to the line
             vocabulary[(key)] = val.replace('\n','')
     return vocabulary
+
 # Construct vocabulary
 print("Vocabulary constructed")
 vocabulary = construct_vocab(PATH + "vocabulary")
 
 # This function will open a gzip files
 def read_data(file, name):
+    '''
+    This function read the text files
+    inputs:
+    file: path to the file
+    name: name of the file so that we can choose the adequate manner to read
+    '''
     with gzip.open(file,'rb') as f:        
         lines = [x.decode('utf8').strip().split('\t') for x in f.readlines()]
     if name == "label2answer":
@@ -38,5 +46,9 @@ def read_data(file, name):
 
 # This function will convert a list of indexes to list of words
 def convert_from_idx_str(list):
-    list = [vocabulary[l] for l in list]
-    return list
+    '''
+    convert a list of indexes into words
+    input: 
+    list: list of indexes
+    '''
+    return [vocabulary[l] for l in list]
