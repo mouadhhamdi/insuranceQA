@@ -4,6 +4,9 @@ import gzip
 # Path to the files
 PATH = '/home/mouadh/Desktop/insuranceQA/V2/'
 
+
+#----------------------------------------------------Loading Data---------------------------------------------------------------
+
 # Read the vocabulary 
 def construct_vocab(file):
     '''
